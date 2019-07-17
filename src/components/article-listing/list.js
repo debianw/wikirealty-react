@@ -1,6 +1,8 @@
 //
+import Button from '@material-ui/core/Button'
 import React, { useEffect } from 'react'
 import { useArticles } from './context'
+import * as articleActions from './actions'
 
 //
 const ArticleList = ({
@@ -8,27 +10,25 @@ const ArticleList = ({
   authorId,
   sort,
 }) => {
-  const { actions, state } = useArticles()
+  const { state, dispatch } = useArticles()
   const { articles } = state
 
-  // console.log(`limit: ${limit}`)
-  // console.log(`authorId: ${authorId}`)
-  // console.log(`sort: ${sort}`)
-
   useEffect(() => {
-    console.log('ArticlesList mounted!')
     // Fetch List of articles
-    actions.fetch({
+    articleActions.fetch(dispatch)({
       limit,
       authorId,
       sort
     })
-  }, [actions, limit, authorId, sort])
+  }, [limit, authorId, sort, dispatch])
+
+  console.log('state => ', state)
 
   return (
     <div>
+      {state.loading && <div>Loading Articles ...</div>}
       {articles.map(article => (
-        <div key={article.id}> {article.title} </div>
+        <div key={article.id}> {article.title} <Button variant="contained" color="primary"> HI </Button> </div>
       ))}
     </div>
   )

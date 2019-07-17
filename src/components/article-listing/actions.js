@@ -8,8 +8,8 @@ import { types as articleTypes } from './reducer'
  * @param {*} state 
  */
 
-const fetch = (dispatch, state) => (options = {}) => {
-  console.log(`Fetching list of articles ... `)
+export const fetch = dispatch => (options = {}) => {
+  console.log('options => ', options)
 
   dispatch({
     type: articleTypes.FETCHING
@@ -25,10 +25,5 @@ const fetch = (dispatch, state) => (options = {}) => {
         { id: 4, title: 'Article #4', description: 'Article description #4' },
       ]
     })
-  }, 0)
+  }, 2000)
 }
-
-//
-export default (dispatch, state) => ({
-  fetch: fetch(dispatch, state)
-})

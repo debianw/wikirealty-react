@@ -1,7 +1,6 @@
 //
 import React, { createContext, useReducer, useMemo, useContext } from 'react'
 import { reducer, initialState } from './reducer'
-import createActions from './actions'
 
 const ArticlesContext = createContext()
 
@@ -22,12 +21,9 @@ const useArticles = () => {
 
   const [state, dispatch] = context
 
-  console.log('render')
-
   return {
     state,
     dispatch,
-    actions: useMemo(() => createActions(dispatch, state), []),
   }
 }
 

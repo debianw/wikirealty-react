@@ -20,7 +20,7 @@ const Profile = () => {
       </Grid>
 
       <Grid className={classes.mainContainer} container item>
-        <Grid item xs={12} md={4} className={classes.leftSideBar}>
+        <Grid item xs={12} md={5} className={classes.leftSideBar}>
           <SocialListing />
           <PropertyListing />
         </Grid>

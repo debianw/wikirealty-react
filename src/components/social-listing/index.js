@@ -7,7 +7,10 @@ import { makeStyles } from '@material-ui/styles'
 const useStyles = makeStyles(theme => {
   return {
     root: {
-      marginBottom: '10px'
+      marginBottom: '10px',
+      [theme.breakpoints.down("sm")]: {
+        display: "none"
+      }
     },
     paper: {
       padding: '20px',
@@ -23,7 +26,9 @@ const SocialListing = () => {
   const classes = useStyles()
 
   return (
-    <Paper className={classes.paper}> List of Social </Paper>
+    <div className={classes.root}>
+      <Paper className={classes.paper}> List of Social </Paper>
+    </div>
   )
 }
 

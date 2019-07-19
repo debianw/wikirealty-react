@@ -1,16 +1,31 @@
 //
 import React from 'react'
 import { makeStyles } from '@material-ui/styles'
+import ProfileCard from '../profile-card'
+import ActionButton from '../action-button'
 
 //
 const useStyles = makeStyles(theme => {
   return {
     root: {
-      padding: '30px',
+      display: "flex",
+      padding: "30px",
       [theme.breakpoints.down('sm')]: {
-        padding: '10px 15px',
+        padding: "10px 15px",
+      },
+      justifyContent: "space-between",
+      alignItems: "center",
+    },
+
+    actions: {
+      display: "flex",
+      [theme.breakpoints.down("sm")]: {
+        display: "none"
+      },
+      "& > a": {
+        marginRight: "10px"
       }
-    }
+    },
   }
 })
 
@@ -19,7 +34,16 @@ const ProfileHeader = () => {
   const classes = useStyles()
 
   return (
-    <div className={classes.root}> HEADER </div>
+    <div className={classes.root}>
+      <div>
+        <ProfileCard />
+      </div>
+
+      <div className={classes.actions}>
+        <ActionButton href="#"> Message </ActionButton>
+        <ActionButton href="#" primary> Call Now </ActionButton>
+      </div>
+    </div>
   )
 }
 

@@ -1,23 +1,40 @@
 //
 import React from 'react'
-import Paper from '@material-ui/core/Paper'
 import { makeStyles } from '@material-ui/styles'
+import PaperCard from '../paper-card'
+import FacebookButton from './facebook-button'
+import LinkedInButton from './linkedin-button'
+import TwitterButton from './twitter-button'
+import WebsiteButton from './website-button'
+import EmailButton from './email-button'
 
 //
 const useStyles = makeStyles(theme => {
   return {
     root: {
-      marginBottom: '10px',
+      marginBottom: '20px',
       [theme.breakpoints.down("sm")]: {
         display: "none"
       }
     },
-    paper: {
-      padding: '20px',
-      borderRadius: '5px',
-      boxShadow: '0 0 5px 0 rgba(0,0,0,.18)',
-      marginBottom: '10px',
+
+    title: {
+      color: "#4A4A4A",
+      fontSize: "18px",
+      fontWeight: "600",
+      lineHeight: "18px",
+      marginBottom: "20px",
     },
+
+    actions: {
+      "& > *": {
+        marginBottom: "10px",
+      }
+    },
+
+    socialButton: {
+
+    }
   }
 })
 
@@ -26,9 +43,16 @@ const SocialListing = () => {
   const classes = useStyles()
 
   return (
-    <div className={classes.root}>
-      <Paper className={classes.paper}> List of Social </Paper>
-    </div>
+    <PaperCard className={classes.root}>
+      <h2 className={classes.title}>Social Profiles</h2>
+      <div className={classes.actions}>
+        <FacebookButton> Facebook </FacebookButton>
+        <LinkedInButton> LinkedIn </LinkedInButton>
+        <TwitterButton> Twitter </TwitterButton>
+        <WebsiteButton> Website </WebsiteButton>
+        <EmailButton> Email </EmailButton>
+      </div>
+    </PaperCard>
   )
 }
 

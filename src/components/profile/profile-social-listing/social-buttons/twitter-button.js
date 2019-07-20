@@ -1,18 +1,18 @@
 //
 import React from 'react'
-import GenericButton from '../../share/generic-button'
+import GenericButton from '../../../../share/generic-button'
 import { makeStyles } from '@material-ui/styles'
 
 //
 const useStyles = makeStyles(theme => ({
   root: {
-    background: "#4A4A4A",
+    background: "#00ACED",
     color: "#FFFFFF",
   }
 }))
 
 //
-const WebsiteButton = ({
+const TwitterButton = ({
   children,
   ...rest
 }) => {
@@ -20,7 +20,7 @@ const WebsiteButton = ({
 
   return (
     <GenericButton
-      iconName="link"
+      iconName="share"
       className={classes.root}
       {...rest}
     >
@@ -30,4 +30,4 @@ const WebsiteButton = ({
 }
 
 //
-export default WebsiteButton 
+export default TwitterButton 

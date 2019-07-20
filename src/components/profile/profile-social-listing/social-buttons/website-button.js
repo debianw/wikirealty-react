@@ -1,18 +1,18 @@
 //
 import React from 'react'
-import GenericButton from '../../share/generic-button'
+import GenericButton from '../../../../share/generic-button'
 import { makeStyles } from '@material-ui/styles'
 
 //
 const useStyles = makeStyles(theme => ({
   root: {
-    background: "#3B5998",
+    background: "#4A4A4A",
     color: "#FFFFFF",
   }
 }))
 
 //
-const FacebookButton = ({
+const WebsiteButton = ({
   children,
   ...rest
 }) => {
@@ -20,7 +20,7 @@ const FacebookButton = ({
 
   return (
     <GenericButton
-      iconName="group"
+      iconName="link"
       className={classes.root}
       {...rest}
     >
@@ -30,4 +30,4 @@ const FacebookButton = ({
 }
 
 //
-export default FacebookButton
+export default WebsiteButton 

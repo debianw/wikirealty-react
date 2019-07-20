@@ -1,18 +1,20 @@
 //
 import React from 'react'
-import GenericButton from '../../share/generic-button'
+import GenericButton from '../../../../share/generic-button'
 import { makeStyles } from '@material-ui/styles'
 
 //
 const useStyles = makeStyles(theme => ({
   root: {
-    background: "#00ACED",
-    color: "#FFFFFF",
+    background: "#FFFFFF",
+    color: "#4A4A4A",
+    border: "2px solid",
+    borderColor: "#4A4A4A",
   }
 }))
 
 //
-const TwitterButton = ({
+const EmailButton = ({
   children,
   ...rest
 }) => {
@@ -20,7 +22,7 @@ const TwitterButton = ({
 
   return (
     <GenericButton
-      iconName="share"
+      iconName="email"
       className={classes.root}
       {...rest}
     >
@@ -30,4 +32,4 @@ const TwitterButton = ({
 }
 
 //
-export default TwitterButton 
+export default EmailButton 

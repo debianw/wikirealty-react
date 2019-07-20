@@ -1,10 +1,10 @@
 //
 import React from 'react'
 import ArticleList from './list'
-import { ArticlesProvider } from './context'
+import { ArticlesProvider } from './state/context'
 
 //
-const ArticleListing = props => {
+const Article = props => {
   return (
     <ArticlesProvider>
       <ArticleList {...props} />
@@ -13,4 +13,4 @@ const ArticleListing = props => {
 }
 
 //
-export default ArticleListing
+export default Article

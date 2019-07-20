@@ -1,20 +1,18 @@
 //
 import React from 'react'
-import GenericButton from '../../share/generic-button'
+import GenericButton from '../../../../share/generic-button'
 import { makeStyles } from '@material-ui/styles'
 
 //
 const useStyles = makeStyles(theme => ({
   root: {
-    background: "#FFFFFF",
-    color: "#4A4A4A",
-    border: "2px solid",
-    borderColor: "#4A4A4A",
+    background: "#0077B5",
+    color: "#FFFFFF",
   }
 }))
 
 //
-const EmailButton = ({
+const LinkedInButton = ({
   children,
   ...rest
 }) => {
@@ -22,7 +20,7 @@ const EmailButton = ({
 
   return (
     <GenericButton
-      iconName="email"
+      iconName="share"
       className={classes.root}
       {...rest}
     >
@@ -32,4 +30,4 @@ const EmailButton = ({
 }
 
 //
-export default EmailButton 
+export default LinkedInButton 

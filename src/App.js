@@ -1,5 +1,5 @@
 import React from 'react';
-import Profile from './pages/profile'
+import ProfilePage from './pages/Profile'
 import CssBaseline from '@material-ui/core/CssBaseline'
 import { ThemeProvider } from '@material-ui/styles'
 import theme from './share/theme'
@@ -11,7 +11,7 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <Profile />
+      <ProfilePage />
     </ThemeProvider>
   );
 }

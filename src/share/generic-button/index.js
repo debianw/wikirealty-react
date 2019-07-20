@@ -11,6 +11,7 @@ const useStyles = makeStyles(theme => ({
     borderRadius: "1.86px",
     padding: "10px",
     cursor: "pointer",
+    textDecoration: "none",
   },
 
   buttonText: {
@@ -30,15 +31,16 @@ const GenericButton = ({
   iconName,
   className,
   children,
+  ...rest
 }) => {
   const classes = useStyles()
   const composeClassNames = classnames(`${classes.root} ${className}`)
 
   return (
-    <div className={composeClassNames}>
+    <a className={composeClassNames} {...rest}>
       <Icon className={classes.icon}>{iconName || 'settings'}</Icon>
       <span className={classes.buttonText}> {children} </span>
-    </div>
+    </a>
   )
 }
 

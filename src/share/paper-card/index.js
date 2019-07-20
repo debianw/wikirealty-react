@@ -1,6 +1,7 @@
 //
 import React from 'react'
 import Paper from '@material-ui/core/Paper'
+import classnames from 'classnames'
 import { makeStyles } from '@material-ui/styles'
 
 //
@@ -14,12 +15,15 @@ const useStyles = makeStyles(theme => ({
 
 //
 const PaperCard = ({
-  children
+  children,
+  className,
+  ...rest
 }) => {
   const classes = useStyles()
+  const composeClassName = classnames(`${className} ${classes.root}`)
 
   return (
-    <Paper className={classes.root}> {children} </Paper>
+    <Paper className={composeClassName} {...rest}> {children} </Paper>
   )
 }
 

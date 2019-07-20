@@ -1,8 +1,8 @@
 //
 import React from 'react'
 import { makeStyles } from '@material-ui/styles'
-import ProfileCard from '../profile-card'
-import ActionButton from '../action-button'
+import ProfileCard from '../../share/profile-card'
+import ActionButton from '../../share/action-button'
 
 //
 const useStyles = makeStyles(theme => {

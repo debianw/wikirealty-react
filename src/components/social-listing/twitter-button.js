@@ -1,6 +1,6 @@
 //
 import React from 'react'
-import GenericButton from '../generic-button'
+import GenericButton from '../../share/generic-button'
 import { makeStyles } from '@material-ui/styles'
 
 //

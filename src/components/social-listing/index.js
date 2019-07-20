@@ -1,7 +1,7 @@
 //
 import React from 'react'
 import { makeStyles } from '@material-ui/styles'
-import PaperCard from '../paper-card'
+import PaperCard from '../../share/paper-card'
 import FacebookButton from './facebook-button'
 import LinkedInButton from './linkedin-button'
 import TwitterButton from './twitter-button'
@@ -46,11 +46,11 @@ const SocialListing = () => {
     <PaperCard className={classes.root}>
       <h2 className={classes.title}>Social Profiles</h2>
       <div className={classes.actions}>
-        <FacebookButton> Facebook </FacebookButton>
-        <LinkedInButton> LinkedIn </LinkedInButton>
-        <TwitterButton> Twitter </TwitterButton>
-        <WebsiteButton> Website </WebsiteButton>
-        <EmailButton> Email </EmailButton>
+        <FacebookButton href="https://facebook.com/lesternare" target="_blank"> Facebook </FacebookButton>
+        <LinkedInButton href="https://linkedin.com/in/lesternare" target="_blank"> LinkedIn </LinkedInButton>
+        <TwitterButton href="https://twitter.com/lesternare" target="_blank"> Twitter </TwitterButton>
+        <WebsiteButton href="http://www.lesternare.com" target="_blank"> Website </WebsiteButton>
+        <EmailButton href="mailto:lester@wikirealty.com" target="_blank"> Email </EmailButton>
       </div>
     </PaperCard>
   )

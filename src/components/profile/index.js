@@ -1,5 +1,6 @@
 //
 import React, { Fragment, useEffect } from 'react'
+import PaperCard from '../../share/paper-card'
 import ArticleListing from '../article-listing'
 import Grid from '@material-ui/core/Grid'
 import ProfileHeader from './profile-header'
@@ -41,10 +42,13 @@ const Profile = ({
 
       <Grid className={classes.mainContainer} container item>
         <Grid item xs={12} md={5} className={classes.leftSideBar}>
-          <SocialListing
-            loading={loadingProfile}
-            profile={profile}
-          />
+          <PaperCard className={classes.socialLinks}>
+            <SocialListing
+              loading={loadingProfile}
+              profile={profile}
+            />
+          </PaperCard>
+
           <PropertyListing />
         </Grid>
 

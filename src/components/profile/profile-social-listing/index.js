@@ -1,6 +1,5 @@
 //
 import React, { Fragment } from 'react'
-import PaperCard from '../../../share/paper-card'
 import FacebookButton from './social-buttons/facebook-button'
 import LinkedInButton from './social-buttons/linkedin-button'
 import TwitterButton from './social-buttons/twitter-button'
@@ -15,15 +14,8 @@ const ProfileSocialListing = ({
 }) => {
   const classes = useStyles()
 
-  if (loading)
-    return (
-      <PaperCard className={classes.root}>
-        Loading Profile ...
-      </PaperCard>
-    )
-
   return (
-    <PaperCard className={classes.root}>
+    <div className={classes.root}>
       {loading && <div>Loading Profile ...</div>}
       {profile && (
         <Fragment>
@@ -37,7 +29,7 @@ const ProfileSocialListing = ({
           </div>
         </Fragment>
       )}
-    </PaperCard>
+    </div>
   )
 }
 

@@ -5,10 +5,7 @@ import { makeStyles } from '@material-ui/styles'
 export default makeStyles(theme => {
   return {
     root: {
-      marginBottom: '20px',
-      [theme.breakpoints.down("sm")]: {
-        display: "none"
-      }
+      
     },
 
     title: {

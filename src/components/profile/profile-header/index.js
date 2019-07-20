@@ -11,6 +11,9 @@ const ProfileHeader = ({
 }) => {
   const classes = useStyles()
 
+  const onMessage = () => console.log(`On Message ...`)
+  const onCallNow = () => console.log(`On Call Now ...`)
+
   return (
     <div className={classes.root}>
       { loading && <div> Loading Profile ...</div>}
@@ -21,8 +24,8 @@ const ProfileHeader = ({
           </div>
 
           <div className={classes.actions}>
-            <ActionButton href="#"> Message </ActionButton>
-            <ActionButton href="#" primary> Call Now </ActionButton>
+            <ActionButton href="#" onClick={onMessage}> Message </ActionButton>
+            <ActionButton href="#" primary onClick={onCallNow}> Call Now </ActionButton>
           </div>
         </Fragment>
       )}

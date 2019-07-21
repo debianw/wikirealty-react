@@ -2,33 +2,33 @@
 import React, { createContext, useReducer, useMemo, useContext } from 'react'
 import { reducer, initialState } from './reducer'
 
-const ArticlesContext = createContext()
+const ProfileContext = createContext()
 
 //
-const ArticlesProvider = props => {
+const ProfileProvider = props => {
   const [state, dispatch] = useReducer(reducer, initialState)
   const value = useMemo(() => [state, dispatch], [state])
 
-  return <ArticlesContext.Provider value={value} {...props} />
+  return <ProfileContext.Provider value={value} {...props} />
 }
 
 //
-const useArticles = () => {
-  const context = useContext(ArticlesContext)
+const useProfile = () => {
+  const context = useContext(ProfileContext)
 
   if (!context)
-    throw new Error(`useArticles must be used within a ArticlesProvider`)
+    throw new Error(`useProfile must be used within a ProfileProvider`)
 
   const [state, dispatch] = context
 
-  return {
+  return [
     state,
     dispatch,
-  }
+  ]
 }
 
 //
 export {
-  useArticles,
-  ArticlesProvider,
+  useProfile,
+  ProfileProvider,
 }

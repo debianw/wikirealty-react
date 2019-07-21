@@ -1,7 +1,7 @@
 //
 import React, { useEffect } from 'react'
-import { useArticles } from './context'
-import * as articleActions from './actions'
+import { useArticle } from '../state/context'
+import * as articleActions from '../state/actions'
 import useStyles from './styles'
 
 //
@@ -11,19 +11,19 @@ const ArticleList = ({
   sort,
 }) => {
   const classes = useStyles()
-  const { state, dispatch } = useArticles()
+  const { state, dispatch } = useArticle()
   const { articles } = state
 
+  // Effect: fetch articles
   useEffect(() => {
-    // Fetch List of articles
-    articleActions.fetch(dispatch)({
-      limit,
-      authorId,
-      sort
-    })
+    articleActions
+      .fetch(dispatch)({
+        limit,
+        authorId,
+        sort
+      })
+      .catch(error => console.log(`Error fetching Articles: ${error.message}`))
   }, [limit, authorId, sort, dispatch])
-
-  console.log('state => ', state)
 
   return (
     <div className={classes.root}>

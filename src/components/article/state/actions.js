@@ -8,8 +8,8 @@ import { types as articleTypes } from './reducer'
  * @param {*} state 
  */
 
-export const fetch = dispatch => (options = {}) => {
-  console.log('options => ', options)
+export const fetch = dispatch => async (options = {}) => {
+  // console.log('options => ', options)
 
   dispatch({
     type: articleTypes.FETCHING
@@ -53,5 +53,5 @@ export const fetch = dispatch => (options = {}) => {
         },
       ]
     })
-  }, 2000)
+  }, 0)
 }

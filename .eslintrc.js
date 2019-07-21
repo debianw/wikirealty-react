@@ -23,6 +23,7 @@ module.exports = {
         "react-hooks"
     ],
     "rules": {
+        "no-console": 0,
         "react/prop-types": 0,
         "react-hooks/rules-of-hooks": 'error',
         "react-hooks/exhaustive-deps": 'warn' // <--- THIS IS THE NEW RULE

@@ -22,6 +22,12 @@ export default makeStyles(theme => {
       [theme.breakpoints.down('sm')]: {
         margin: 0,
       }
+    },
+    socialLinks: {
+      marginBottom: '20px',
+      [theme.breakpoints.down("sm")]: {
+        display: "none"
+      }
     }
   })
 })

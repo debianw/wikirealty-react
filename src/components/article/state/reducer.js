@@ -7,7 +7,12 @@ export const types = {
 //
 export const initialState = {
   loading: false,
-  articles: []
+  articles: [],
+  pages: 0,
+  total: 0,
+  page_size: 0,
+  page: 1,
+  max_score: 0,
 }
 
 //
@@ -23,7 +28,7 @@ export const reducer = (state, action) => {
     case types.FETCHED:
       return {
         ...state,
-        articles: action.payload,
+        ...action.payload,
         loading: false
       }
     //

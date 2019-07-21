@@ -52,7 +52,7 @@ const Profile = ({
           <PropertyListing
             filter__listing_category_id="2"
             lat="34.066888"
-            lon="118.300592"
+            lon="-118.300592"
             min__list_price="0"
             page="1"
             sort="featured"
@@ -62,6 +62,7 @@ const Profile = ({
 
         <Grid item xs={12} md>
           <ArticleListing
+            page={1}
             limit={20}
             authorId={userId}
             sort="last_updated_date__desc"

@@ -1,20 +1,21 @@
 //
 import { types as profileTypes } from './reducer'
+import axios from 'axios'
 
 export const fetch = dispatch => async (options = {}) => {
-  console.log('options => ', options)
+  try {
+    dispatch({
+      type: profileTypes.FETCHING
+    })
 
-  dispatch({
-    type: profileTypes.FETCHING
-  })
+    const { data } = await axios.get(`https://wikirealty.com/api/v1.5/accounts/profile/${options.nick}/`) 
 
-  setTimeout(() => {
     dispatch({
       type: profileTypes.FETCHED,
-      payload: {
-        display_name: "Lester N.",
-        role: "Chief Marketing and Product Officer"
-      }
+      payload: { ...data } 
     })
-  }, 0)
+
+  } catch(error) {
+    console.log(`Error fetching profile!`)
+  }
 }

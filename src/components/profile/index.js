@@ -1,10 +1,10 @@
 //
 import React, { Fragment, useEffect } from 'react'
 import PaperCard from '../../share/paper-card'
-import ArticleListing from '../article-listing'
+import ArticleListing from '../article/article-listing'
 import Grid from '@material-ui/core/Grid'
 import ProfileHeader from './profile-header'
-import PropertyListing from '../property-listing'
+import PropertyListing from '../property/property-listing'
 import SocialListing from './profile-social-listing'
 import useStyles from './styles'
 import { useProfile, ProfileProvider } from './state/context'
@@ -49,7 +49,15 @@ const Profile = ({
             />
           </PaperCard>
 
-          <PropertyListing />
+          <PropertyListing
+            filter__listing_category_id="2"
+            lat="34.066888"
+            lon="118.300592"
+            min__list_price="0"
+            page="1"
+            sort="featured"
+            limit={200}
+          />
         </Grid>
 
         <Grid item xs={12} md>

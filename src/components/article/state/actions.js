@@ -9,7 +9,7 @@ import { types as articleTypes } from './reducer'
  */
 
 export const fetch = dispatch => async (options = {}) => {
-  console.log('options => ', options)
+  // console.log('options => ', options)
 
   dispatch({
     type: articleTypes.FETCHING

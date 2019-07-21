@@ -1,16 +1,18 @@
 //
 import React from 'react'
 import Profile, { ProfileProvider } from '../components/profile'
+import { ArticleProvider } from '../components/article'
+import { PropertyProvider } from '../components/property'
 
 //
 const ProfileContainer = () => {
   return (
-    <ProfileProvider>
+    <ProfileProvider><ArticleProvider><PropertyProvider>
       <Profile
         userId={7869}
         nick="lester"
       />
-    </ProfileProvider>
+    </PropertyProvider></ArticleProvider></ProfileProvider>
   )
 }
 

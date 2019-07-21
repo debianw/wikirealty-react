@@ -21,11 +21,11 @@ const ProfileSocialListing = ({
         <Fragment>
           <h2 className={classes.title}>Social Profiles</h2>
           <div className={classes.actions}>
-            <FacebookButton href="https://facebook.com/lesternare" target="_blank"> Facebook </FacebookButton>
-            <LinkedInButton href="https://linkedin.com/in/lesternare" target="_blank"> LinkedIn </LinkedInButton>
-            <TwitterButton href="https://twitter.com/lesternare" target="_blank"> Twitter </TwitterButton>
-            <WebsiteButton href="http://www.lesternare.com" target="_blank"> Website </WebsiteButton>
-            <EmailButton href="mailto:lester@wikirealty.com" target="_blank"> Email </EmailButton>
+            <FacebookButton href={profile.facebook_url} target="_blank"> Facebook </FacebookButton>
+            <LinkedInButton href={profile.linkedin_url} target="_blank"> LinkedIn </LinkedInButton>
+            <TwitterButton href={profile.twitter_url} target="_blank"> Twitter </TwitterButton>
+            <WebsiteButton href={profile.website_url} target="_blank"> Website </WebsiteButton>
+            <EmailButton href={`mailto:${profile.email}`} target="_blank"> Email </EmailButton>
           </div>
         </Fragment>
       )}

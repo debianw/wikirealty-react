@@ -2,33 +2,33 @@
 import React, { createContext, useReducer, useMemo, useContext } from 'react'
 import { reducer, initialState } from './reducer'
 
-const ArticlesContext = createContext()
+const PropertyContext = createContext()
 
 //
-const ArticlesProvider = props => {
+const PropertyProvider = props => {
   const [state, dispatch] = useReducer(reducer, initialState)
   const value = useMemo(() => [state, dispatch], [state])
 
-  return <ArticlesContext.Provider value={value} {...props} />
+  return <PropertyContext.Provider value={value} {...props} />
 }
 
 //
-const useArticles = () => {
-  const context = useContext(ArticlesContext)
+const useProperty = () => {
+  const context = useContext(PropertyContext)
 
   if (!context)
-    throw new Error(`useArticles must be used within a ArticlesProvider`)
+    throw new Error(`useProperty must be used within a PropertyProvider`)
 
   const [state, dispatch] = context
 
-  return {
+  return [
     state,
     dispatch,
-  }
+  ]
 }
 
 //
 export {
-  useArticles,
-  ArticlesProvider,
+  useProperty,
+  PropertyProvider,
 }

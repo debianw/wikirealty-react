@@ -20,7 +20,7 @@ const ProfileHeader = ({
       { profile && (
         <Fragment>
           <div>
-            <ProfileCard />
+            <ProfileCard profile={profile} />
           </div>
 
           <div className={classes.actions}>

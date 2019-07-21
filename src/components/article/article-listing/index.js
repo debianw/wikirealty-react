@@ -1,7 +1,7 @@
 //
 import React, { useEffect } from 'react'
-import { useArticles } from './state/context'
-import * as articleActions from './state/actions'
+import { useArticle } from '../state/context'
+import * as articleActions from '../state/actions'
 import useStyles from './styles'
 
 //
@@ -11,7 +11,7 @@ const ArticleList = ({
   sort,
 }) => {
   const classes = useStyles()
-  const { state, dispatch } = useArticles()
+  const { state, dispatch } = useArticle()
   const { articles } = state
 
   // Effect: fetch articles

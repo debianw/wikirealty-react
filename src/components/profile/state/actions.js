@@ -1,6 +1,7 @@
 //
 import { types as profileTypes } from './reducer'
 import axios from 'axios'
+import config from '../../../config'
 
 export const fetch = dispatch => async (options = {}) => {
   try {
@@ -8,7 +9,7 @@ export const fetch = dispatch => async (options = {}) => {
       type: profileTypes.FETCHING
     })
 
-    const { data } = await axios.get(`https://wikirealty.com/api/v1.5/accounts/profile/${options.nick}/`) 
+    const { data } = await axios.get(`${config.apiURL}/accounts/profile/${options.nick}/`) 
 
     dispatch({
       type: profileTypes.FETCHED,

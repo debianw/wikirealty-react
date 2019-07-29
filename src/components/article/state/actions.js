@@ -1,6 +1,7 @@
 //
 import { types as articleTypes } from './reducer'
 import axios from 'axios'
+import config from '../../../config'
 
 /**
  * Fetch Articles 
@@ -20,7 +21,7 @@ export const fetch = dispatch => async ({
       type: articleTypes.FETCHING
     })
 
-    const { data: { hits }} = await axios.get(`https://wikirealty.com/api/v1.5/tips/serp/search`, {
+    const { data: { hits }} = await axios.get(`${config.apiURL}/tips/serp/search`, {
       params: {
         limit,
         "must__author.id": authorId,
